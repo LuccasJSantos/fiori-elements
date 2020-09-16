@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+        <Schema Namespace="lab2dev.sample.odata.catalog" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ProductsType">
+                <Key>
+                    <PropertyRef Name="ProductID" />
+                </Key>
+                <Property Name="ProductID" Type="Edm.Int32" Nullable="false" />
+                <Property Name="ProductName" Type="Edm.String" MaxLength="50" />
+                <Property Name="Supplier" Type="Edm.String" MaxLength="50" />
+            </EntityType>
+            <EntityType Name="EmployeesType">
+                <Key>
+                    <PropertyRef Name="EmployeeID" />
+                </Key>
+                <Property Name="EmployeeID" Type="Edm.Int32" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" MaxLength="50" />
+                <Property Name="Address" Type="Edm.String" MaxLength="50" />
+            </EntityType>
+            <EntityContainer Name="catalog" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="Products" EntityType="lab2dev.sample.odata.catalog.ProductsType" />
+                <EntitySet Name="Employees" EntityType="lab2dev.sample.odata.catalog.EmployeesType" />
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
